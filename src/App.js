@@ -11,40 +11,55 @@ import { Link, Route, Routes } from "react-router-dom";
 import Post from "./Post.js";
 import PostLayout from "./PostLayout.js";
 import { useEffect, useState } from "react";
-import luffyCrew from "./OnePiece-LuffyCrew.json";
+import onePieceJsonData from "./OnePiece-LuffyCrew.json";
 
 function App() {
   const [search, setSearch] = useState("");
-  const [posts, setPosts] = useState(luffyCrew);
-useEffect(() => {
-  console.log(posts)
-
- 
-}, [])
-
+  const [posts, setPosts] = useState(onePieceJsonData.luffyCrew);
+  console.log(posts);
   return (
-    <div className="m-4">
+    <div className=" m-1 rounded-sm flex flex-col min-h-screen">
       <Header title={"ONEPIECE FANDOM "} />
+      <main className="flex-grow">
+        <Nav search={search} setSearch={setSearch} />
+        <Routes className="">
+          <Route
+            path="/"
+            element={
+              <>
+                <Home posts={posts} />
+                <PostPage posts={posts} />
+                <About />
+                <Missing />
+              </>
+            }
+          />
+          <Route path="/PostPage" element={<PostPage posts={posts} />}></Route>
+          <Route path="/about" element={<About />}></Route>
+        </Routes>
+        <NewPost />
+      </main>
+      <Footer />
+      {/* <Header title={"ONEPIECE FANDOM "} />
       <Nav search={search} setSearch={setSearch} />
-      <Home />
+      <Home posts={posts} />
       <NewPost />
       <PostPage />
       <About />
       <Missing />
-      <Footer />
-      
+      <Footer /> */}
     </div>
   );
 }
 
 export default App;
 
-{
-  /*
+/* {
+  
       The Routes and route will help us to reach the page from url
       the Link used to show us the same in the front`
-      */
-}
+     
+} */
 
 // <Routes>
 //   <Route path="/" element={<Home />} />
@@ -76,3 +91,9 @@ export default App;
 //     </li>
 //   </ul>
 // </nav>;}
+
+/* useEffect(() => {
+  console.log(posts)
+
+ 
+}, []) */

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Header({title}) {
   return (
-    <header className="text-lg w-full text-center bg-amber-700 text-white">
+    <header className="text-lg  text-center bg-amber-700 text-white">
       <h1>{title}</h1>
     </header>
   );

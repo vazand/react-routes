@@ -6,7 +6,7 @@ function Nav({ search, setSearch }) {
     setSearch(params.target.value);
   }
   return (
-    <nav className="container grid grid-flow-col-dense bg-black  ">
+    <nav className="  grid grid-flow-col-dense bg-black  ">
       <form className="p-2" onSubmit={(e) => e.preventDefault()}>
         <label
           htmlFor="search"
@@ -26,16 +26,16 @@ function Nav({ search, setSearch }) {
           placeholder={"search posts"}
         />
       </form>
-      <div className="flex align-middle text-white p-2">
+      <div className="flex align-middle text-white p-2 ">
         <ul className="grid grid-flow-col gap-1  ">
           <li className="hover:bg-green-600 p-2">
             <Link to={"/"}>Home</Link>
           </li>
           <li className="hover:bg-green-600 p-2">
-            <Link to={"/about"}>About</Link>
+            <Link to={"/PostPage"}>Postpage</Link>
           </li>
           <li className="hover:bg-green-600 p-2">
-            <Link to={"/PostPage"}>Postpage</Link>
+            <Link to={"/about"}>About</Link>
           </li>
         </ul>
       </div>

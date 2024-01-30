@@ -1,20 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Feed from "./Feed";
 
-function PostPage() {
+function PostPage({posts}) {
   return (
-    <main>
-      <h1> The Post Page</h1>
-
-      <br />
-      <br />
-      {/* <Link to={"/postPage/1"}>PostPage1</Link>
-      <br />
-
-      <Link to={"/postPage/2"}>PostPage2</Link>
-      <br />
-      <Link to={"/postPage/3"}>PostPage3</Link>
-      <br /> */}
+    <main className="">
+      {posts.length ? (
+        <Feed posts={posts} />
+      ):(
+        <p>No posts to Display</p>
+      )}
     </main>
   );
 }

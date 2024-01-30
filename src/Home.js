@@ -1,9 +1,15 @@
 import React from "react";
+import Feed from "./Feed";
 
-function Home() {
+function Home({posts}) {
+  console.log(posts.length)
   return (
-    <main>
-      <h1>Home</h1>
+    <main className="">
+      {posts.length ? (
+        <Feed posts={posts} />
+      ):(
+        <p>No posts to Display</p>
+      )}
     </main>
   );
 }
